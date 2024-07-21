@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title> ANKod Oluştur</title>
+
+  <style>
+/*
+@font-face {
+  font-family: Poppins;
+  src: url(/assets/fonts/Poppins-Regular.ttf);
+}
+
+@font-face {
+  font-family: Vazirmatn;
+  src: url(/assets/fonts/Vazirmatn-VariableFont_wght.ttf);
+}
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins&family=Vazirmatn&display=swap');
+
+
+* {
+  margin: 0;
+  padding: 0;
+  outline: none;
+  border: none;
+  box-sizing: border-box;
+  unicode-bidi: plaintext;
+  font-family: Poppins, Vazirmatn, serif;
+
+  --themeClr: rgb(70 130 180);
+  --borderClr: rgb(70 130 180 / .5);
+}
+
+body {
+  background: var(--themeClr);
+  min-height: 100vh;
+}
+
+body,
+.ctrl__div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  width: 100%;
+  margin: 1em;
+  padding: 1em;
+  border-radius: 8pt;
+  background: #F2F4F8;
+}
+
+.container * {
+  border-radius: 4pt;
+}
+
+.title {
+  color: var(--themeClr);
+  transition: all 1s;
+  letter-spacing: 1pt;
+}
+
+.title:hover {
+  letter-spacing: 5pt;
+  -webkit-text-stroke-color: var(--borderClr);
+  -webkit-text-stroke-width: 1pt;
+  color: white;
+  font-size: 2em;
+}
+
+.title,
+.convert__btn {
+  text-align: center;
+}
+
+.ancode {
+  margin: 1em auto;
+}
+
+.from__area,
+.from__label,
+.exchange__btn,
+.to__label,
+.to__area,
+.convert__btn {
+  display: block;
+  width: 100%;
+  padding: .5rem;
+  font-size: 11pt;
+}
+
+textarea,
+.ctrl__div {
+  border: 1pt solid var(--borderClr);
+}
+
+textarea {
+  resize: vertical;
+}
+
+textarea::placeholder {
+  opacity: .4;
+}
+
+.ctrl__div {
+  background: white;
+  text-align: center;
+  border-top: none;
+  border-bottom: none;
+}
+
+.from__label,
+.exchange__btn,
+.to__label {
+  color: var(--themeClr);
+}
+
+.exchange__btn {
+  background: rgb(70 130 180 / .03);
+  width: 30%;
+}
+
+.convert__btn {
+  background: var(--themeClr);
+  color: white;
+}
+
+.convert__btn:active {
+  background: var(--borderClr);
+}
+
+footer p {
+  font-size: 10pt;
+  color: var(--themeClr);
+  text-align: center;
+  margin-top: 1em;
+}
+
+footer p a {
+  text-decoration: none;
+  color: var(--themeClr);
+  animation: fade 2s linear infinite;
+}
+
+@keyframes fade {
+
+  0%,
+  100% {
+    color: var(--borderClr);
+  }
+
+  40%,
+  60% {
+    color: var(--themeClr);
+  }
+}
+</style>
+
+</head>
+
+<body>
+
+  
+  <section class="container">
+
+    <h1 class="title"> ANKOD Oluştur</h1>
+
+    <section class="ancode">
+
+      <textarea class="from__area" rows="7" placeholder="Yazını gir!"></textarea>
+
+      <div class="ctrl__div">
+
+        <label class="from__label"> İnsan </label>
+
+        <button class="exchange__btn"> &lrarr; </button>
+
+        <label class="to__label"> ANKOD</label>
+
+      </div>
+
+      <textarea class="to__area" rows="7" placeholder="ANKodu şifresi" readonly></textarea>
+
+    </section>
+
+    <button class="convert__btn"> Oluştur </button>
+
+  </section>
+  
+   <script src="ANCode.js"></script>
+  <script src="pre-script.js"></script>
+  <script src="main.js"></script>
+</body>
+
+</html>

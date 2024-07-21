@@ -1,0 +1,183 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css-terminal</title>
+</head>
+<body> 
+	<style>
+		
+* {
+    padding:                     0;
+    margin:                      0;
+}
+body {
+    font-family:                 monospace;
+    font-size:                   14px;
+    color:                       #c8cfd8;
+    background:                  #343944;
+    margin:                      auto;
+    padding-top:                 60px;
+    line-height:                 1.3em;
+}
+a {
+    color:                       #5294e2;
+}
+b{
+    color:                       #6a9e41;
+}
+.window {
+    background:                  #404552;
+    box-shadow:                  0 0 10px rgba(0,0,0,0.5);
+    border-radius:               5px;
+    border:                      2px solid #2e333f;
+    width:                       480px;
+    margin:                      auto;
+
+}
+.window_header {
+    background:                  #2e333f;
+    color:                       #c8cfd8;
+    padding:                     7px;
+
+}
+.window_title {
+    display:                     inline-block;
+}
+.window_minimize_button, .window_maximize_button, .window_close_button {
+    border-radius:               7px;
+    width:                       12px;
+    height:                      12px;
+    display:                     inline-block;
+    float:                       right;
+    margin-left:                 6px;
+}
+.window_minimize_button {
+    background:                  #2cc640;
+    border:                      1px solid #51a75c;
+  
+}
+.window_maximize_button {
+    background:                  #fdbf2e;
+    border:                      1px solid #d6a839;  
+} 
+.window_close_button {
+    background:                  #fe6256;
+    border:                      1px solid #ca5f59;  
+}
+.window_content {
+    padding:                     7px;
+} 
+.blink {
+    animation:                   blinking 1s infinite;
+}
+@keyframes blinking {
+    0% { clear:                  both; }
+    50%{ color:                  transparent; }    
+}
+
+@media screen and (max-width: 800px) {
+    body {
+        padding-top:             5px;
+    }
+
+    .window {
+        width:                   98%;
+        margin-top:               
+    }
+}
+		
+		ul{
+  height: 15%;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+ul li{
+  font-size: 100px;
+  font-weight: 50;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  color: #484848;
+  animation: light 1.4s linear infinite
+}
+@keyframes light{
+  0%{
+    color: #484848;
+    text-shadow: none;
+  }
+  50%{
+    color: #484848;
+    text-shadow: none;
+  }
+  100%{
+    color: #fff900;
+    text-shadow: 0 0 7px #fff900, 0 0 50px #fff900;
+  }
+}
+ul li:nth-child(1){
+  animation-delay: 0;
+}
+ul li:nth-child(2) {
+  animation-delay: 0.1s;
+}
+ul li:nth-child(3) {
+  animation-delay: 0.2s;
+}
+ul li:nth-child(4) {
+  animation-delay: 0.3s;
+}
+ul li:nth-child(5) {
+  margin-left: 10px;
+  animation-delay: 0.4s;
+}
+ul li:nth-child(6) {
+  animation-delay: 0.5s;
+}
+ul li:nth-child(7) {
+  animation-delay: 0.6s;
+}
+ul li:nth-child(8) {
+  animation-delay: 0.7s;
+}
+
+</style>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	<ul><li>VOXEN</li></ul>
+    <div class="window">  
+        <div class="window_header">
+            <div class="window_title">✩░▒▓▆▅▃▂▁ VOXEN.io ▁▂▃▅▆▓▒░✩</div>
+            <div class="window_close_button"></div>
+            <div class="window_maximize_button"></div>
+            <div class="window_minimize_button"></div>
+        </div>
+        <div class="window_content">
+       Merhaba Hoş Geldin Dostum<br>
+            İşinize Yarıyacak Scriptler Burda Desteğinizi Bekliyorum.<br>
+            	</br>
+            <span>-----------</span>
+            <span>|Scriptler|</span>
+            <span>-----------</span>
+            <b>serjanrus@voxen.io ☛</b> <span class="blink">serjanrus</span><br>
+             <b>serjanrus@voxen.io ☛</b> <a href="whatsaap.html"><span class="blink"><font size="2">WP Link Oluştur. [✆]</font></span></a><br> 
+             	<b>serjanrus@voxen.io ☛</b> <a href="password.html"><span class="blink"><font size="2">Şifre Oluştur. [⚠]</font></span></a><br>
+             	<b>serjanrus@voxen.io ☛</b> <a href="file.html"><span class="blink"><font size="2">Dosya Editör. [✎]</font></span></a><br>
+             	<b>serjanrus@voxen.io ☛</b> <a href="ankod.html"><span class="blink"><font size="2">ANKOD Oluştur. [⌨]</font></span></a><br>
+            	</br>
+            </br>
+        </div>
+    </div>
+</body>
+</html>

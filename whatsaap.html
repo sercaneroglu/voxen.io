@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>WhatsApp Mesajlı Link Oluştur</title>
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> -->
+    
+<style>
+body {
+  background-color: Black;
+  font-size: 16px;
+}
+
+div {
+  width: 80%;
+  margin: auto;
+  text-align: center;
+  border-radius: 10px;
+  background-color: #C2C6F1;
+  padding: 10px;
+  margin-top: 10px;
+  box-shadow: 0px 0px 5px #000000CF;
+}
+
+span {
+  display: flex;
+  background-color: #9BA1E1;
+  margin: 10px auto 1px auto;
+  border-radius: 5px;
+  border: solid #000000;
+  border-width: 1px;
+  padding: 2px;
+}
+
+input, textarea {
+  padding: 2px;
+  width: 100%;
+  margin: 1px auto 1px auto;
+  border-radius: 5px;
+  border-color: #000000;
+  border-width: 1px;
+}
+
+a {
+  word-break: break-all;
+  color: Yellow;
+}
+
+input:focus, textarea:focus {
+  outline: none !important;
+  border-color: #0065FF;
+  box-shadow: 0 0 3px #0065FF;
+}
+
+::placeholder {
+  color: red;
+  opacity: 1;
+}
+
+::-ms-input-placeholder {
+  color: red;
+}</style>
+
+    
+  </head>
+  <body>
+    <main>
+      <div>
+        <h1>Telefon Numaran</h1><label>DDI <input type="tel" id="ddi_input" required></label>
+        <label>DDD <input type="tel" id="ddd_input"></label
+        <label>Telefon No <input type="tel" id="phone_input"></label>
+      </div>
+      <div>
+        <h1>Mesajını Yaz</h1>
+        <textarea id="text_input" rows="15"></textarea>
+      </div>
+      <div>
+        <h1>Link Oluştur</h1>
+        <input type="button" value="Oluştur" onclick="GenerateWhatsappLink()">
+        <input type="button" id="copy" value="Koplaya" onclick="CopyToClipboard()" disabled>
+        <span><a id="output_link" translate="no">&nbsp;</a></span>
+      </div>
+    </main>
+    
+    <script>function IsValidPhoneNumber(phone) {
+  return true
+}
+
+function CopyToClipboard() {
+  const text_value = document.getElementById("output_link").innerText
+  const output_field = document.createElement("input")
+  
+  output_field.value = text_value
+  document.body.appendChild(output_field) 
+  output_field.select()
+  output_field.setSelectionRange(0, 99999)
+  if (navigator === undefined) {
+    alert("Bağlantı Kopyalanamıyor.")
+  } else {
+    navigator.clipboard.writeText(output_field.value).then(() => {
+      alert("Bağlantı Kopyalandı.")
+    }).catch(() => {
+      alert("Bağlantı Kopyalanamıyor.")
+    })
+  } 
+  document.body.removeChild(output_field)
+}
+
+function GenerateWhatsappLink() {
+  const whatsapp_link = "https://wa.me/"
+    const ddi_number = document.getElementById("ddi_input")
+  const ddd_number = document.getElementById("ddd_input")
+  const phone_number = document.getElementById("phone_input")
+  const text = document.getElementById("text_input")
+  const output = document.getElementById("output_link")
+  const copy_button = document.getElementById("copy")
+  const full_phone_number = `${ddi_number.value}${ddd_number.value}${phone_number.value}`
+  
+  if (ddi_number.value.length == 0 || ddd_number.value.length == 0 || phone_number.value.length == 0) {
+    ddi_number.placeholder = "Bu Alan Zorunlu!"
+    ddd_number.placeholder = "Bu Alan Zorunlu!"
+    phone_number.placeholder = "Bu Alan Zorunlu!"
+  } else {
+    var check_phone_number = ""
+    for (let n = 0; n < full_phone_number.length; n++) {
+      check_phone_number += Number.isInteger(parseInt(full_phone_number[n])) ? full_phone_number[n] : ""
+    }
+    if (IsValidPhoneNumber(check_phone_number)) {
+      var text_value = text.value.length > 0 ? "?text=" + encodeURIComponent(text.value.trim()) : ""
+      copy_button.disabled = false
+      output_link.innerText = `${whatsapp_link}${check_phone_number}${text_value}`
+      output_link.href = output_link.innerText
+    } else {
+      alert("Geçersiz Telefon Numarası!")
+    }
+  } 
+}</script>
+  </body>
+</html>
